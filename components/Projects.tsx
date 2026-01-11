@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
-import { Project } from '../types';
+import { Project } from '../types.ts';
 
 const projects: Project[] = [
   {

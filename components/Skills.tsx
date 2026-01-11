@@ -4,7 +4,7 @@ import {
   FileJson, Database, Server, Layout, Cloud, 
   GitBranch, Terminal, Globe, Cpu, Layers, Box, Search 
 } from 'lucide-react';
-import { Skill } from '../types';
+import { Skill } from '../types.ts';
 
 const skillsData: Skill[] = [
   // Backend

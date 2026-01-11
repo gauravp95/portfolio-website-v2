@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Skills from './components/Skills.tsx';
+import Projects from './components/Projects.tsx';
+import Experience from './components/Experience.tsx';
+import Contact from './components/Contact.tsx';
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 const App: React.FC = () => {
   return (
