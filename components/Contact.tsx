@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
 
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 mb-12">
             <ContactItem icon={<Mail className="text-primary-400" />} text="gauravpatil4195@gmail.com" href="mailto:gauravpatil4195@gmail.com" />
-            <ContactItem icon={<Phone className="text-primary-400" />} text="+91 9867003559" href="tel:+919867003559" />
+            <ContactItem icon={<Phone className="text-primary-400" />} text="+91 986700XXXX" href="tel:+919867003559" />
             <ContactItem icon={<MapPin className="text-primary-400" />} text="Mumbai, India" />
           </div>
 
