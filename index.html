@@ -25,9 +25,10 @@
                 500: '#06b6d4',
               },
               dark: {
-                900: '#0f172a', // Slate 900
-                800: '#1e293b', // Slate 800
-                700: '#334155', // Slate 700
+                950: '#020617',
+                900: '#0f172a',
+                800: '#1e293b',
+                700: '#334155',
               }
             }
           },
@@ -40,23 +41,30 @@
     <style>
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #0f172a;
+        background: #020617;
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 5px;
+        background: #1e293b;
+        border-radius: 10px;
+        border: 2px solid #020617;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
+        background: #334155;
+      }
+
+      ::selection {
+        background: rgba(139, 92, 246, 0.3);
+        color: #a78bfa;
       }
       
       .glass-card {
         background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       
       .gradient-text {
@@ -67,7 +75,7 @@
 
       /* Animated Gradient Background */
       .animated-bg {
-        background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f172a, #1e293b);
+        background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #020617);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
       }
@@ -76,6 +84,17 @@
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
+      }
+
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(to right, #22d3ee, #8b5cf6);
+        transform-origin: 0%;
+        z-index: 100;
       }
     </style>
   <script type="importmap">
@@ -90,9 +109,9 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-primary-500/30 selection:text-primary-400">
+    <div id="scroll-progress"></div>
     <div id="root"></div>
-    <!-- Entry point for the application -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
