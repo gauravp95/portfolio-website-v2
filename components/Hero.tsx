@@ -75,17 +75,17 @@ const Hero: React.FC = () => {
 
         {/* Visual Element / Code Block */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: -20 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="hidden lg:block relative"
         >
-          {/* Floating Elements */}
-          <FloatingIcon Icon={Code2} delay={0} x={-150} y={-140} color="text-blue-500" />
-          <FloatingIcon Icon={Terminal} delay={2} x={160} y={-90} color="text-emerald-500" />
-          <FloatingIcon Icon={Database} delay={4} x={190} y={110} color="text-violet-500" />
+          {/* Floating Elements - Now with z-20 to appear above the card */}
+          <FloatingIcon Icon={Code2} delay={0} x={-170} y={-160} color="text-blue-500" />
+          <FloatingIcon Icon={Terminal} delay={2} x={180} y={-110} color="text-emerald-500" />
+          <FloatingIcon Icon={Database} delay={4} x={210} y={130} color="text-violet-500" />
 
-          <div className="glass-card rounded-3xl p-8 border border-white/10 shadow-2xl relative bg-white/40 dark:bg-slate-900/40 group overflow-hidden">
+          <div className="glass-card rounded-3xl p-8 border border-white/10 shadow-2xl relative bg-white/40 dark:bg-slate-900/40 group overflow-hidden z-10">
              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent pointer-events-none" />
              <div className="flex items-center space-x-2 mb-6">
                <div className="w-3.5 h-3.5 rounded-full bg-rose-500/80 shadow-lg shadow-rose-500/20"></div>
@@ -149,7 +149,7 @@ const FloatingIcon = ({ Icon, delay, x, y, color }: { Icon: any; delay: number; 
       delay: delay,
       ease: "easeInOut"
     }}
-    className={`absolute p-5 rounded-2xl bg-white dark:bg-slate-800 shadow-2xl ${color} z-20 border border-slate-100 dark:border-slate-700`}
+    className={`absolute p-5 rounded-2xl bg-white dark:bg-slate-800 shadow-xl ${color} z-20 border border-slate-100 dark:border-slate-700 pointer-events-none`}
     style={{ top: '50%', left: '30%', marginLeft: x, marginTop: y }}
   >
     <Icon size={36} strokeWidth={1.5} />
